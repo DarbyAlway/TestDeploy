@@ -33,8 +33,10 @@ const router = createRouter({
         return OlympicService.getCountry(id)
           .then((response) => {
             countryStore.setCountry(response.data)
+            console.log("response")
           })
           .catch((error) => {
+            console.log("catch an error in this route")
             if (error.response && error.response.status === 404) {
               return {
                 name: '404-resource-view',
